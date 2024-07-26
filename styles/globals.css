@@ -16,14 +16,13 @@
   }
 }
 
+html {
+  @apply scroll-smooth focus:scroll-auto
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color:  #e0ffff;
+  @apply tracking-wide text-custom-dark-gray
 }
 
 @layer utilities {
@@ -31,3 +30,12 @@ body {
     text-wrap: balance;
   }
 }
+
+.nav-item {
+  @apply text-xl font-semibold text-custom-dark-gray items-center
+}
+
+.nav-item:hover {
+  @apply text-white
+}
+
