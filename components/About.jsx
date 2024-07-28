@@ -33,7 +33,7 @@ const About = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ amount: 0.1 }}
       style={{ originX: 0.5 }}
-      className=" flex flex-col w-full bg-[#f3e5f5] shadow-2xl shadow-[#e7c9d7] min-h-screen items-center">
+      className=" flex flex-col w-full bg-[#f3e5f5] shadow-xl shadow-[#e7c9d7] min-h-screen items-center">
       <h1 className='justify-center pt-32 text-4xl font-extrabold'>
         About Me
       </h1>
