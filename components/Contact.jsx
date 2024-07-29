@@ -1,17 +1,34 @@
+'use client'
 import React from 'react'
 import { motion } from 'framer-motion';
 import useSubmit from '@/hooks/useSubmit';
+import CIcon from '@coreui/icons-react';
+import { cibLinkedin, cibGithub, } from '@coreui/icons';
+
 
 const Contact = () => {
 
   const { handleContactSubmit, error, success, loading } = useSubmit();
 
   return (
-    <section id='contact' className='flex flex-col w-full bg-[#fccff6] min-h-screen items-center justify-center'>
+    <section id='contact' className='flex flex-col w-full bg-[#fad3f4] min-h-screen items-center justify-center'>
 
-      <h1 className='mx-auto pt-32 text-4xl font-extrabold'>Contact</h1>
+      <h1 className='mx-auto pt-32 text-4xl font-extrabold'>Contact Me</h1>
+      <div className='flex flex-row w-full mt-10 mx-auto justify-center gap-8'>
+        <a href='https://www.linkedin.com/in/jie-min-tung-675533262/'>
+          <CIcon icon={cibLinkedin} width={50} height={50} style={{ fill: '#55165e' }} />
+        </a>
+        <a href='https://github.com/jietung02'>
+          <CIcon icon={cibGithub} width={50} height={50} style={{ fill: '#55165e' }} />
+        </a>
 
-      <motion.form method='POST' className='flex flex-col mx-auto my-16 items-center w-3/4 p-6' onSubmit={handleContactSubmit}>
+      </div>
+      <motion.form method='POST' className='flex flex-col mx-auto m-6 items-center w-3/4 p-6' onSubmit={handleContactSubmit}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ amount: 0.3 }}
+      >
         <div className='w-96 relative text-lg font-medium m-3'>
           <input type='text' id='name' name='name' required pattern="[A-Za-z ]{1,50}" title="Please enter a valid name (letters and spaces only, 1-50 characters)" className="block rounded-lg px-2.5 pt-5 pb-1 text-lg w-full text-custom-dark-gray bg-[#F8F8FF] focus:ring-2 focus:ring-[#22095e] focus:outline-none peer" placeholder="" />
           <label htmlFor='name' className="absolute top-4 text-sm text-custom-dark-gray duration-300 transform -translate-y-4 scale-75 z-10 origin-[0] left-2.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Name</label>

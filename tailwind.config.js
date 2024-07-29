@@ -16,20 +16,20 @@ module.exports = {
         'custom-dark-gray': '#161919',
       }
     },
-    animation: {
-      "fade-slide-down": "fade-slide-down 1.5s ease 0.5s forwards",
-      "fade-slide-right": "fade-slide-right 1.5s ease 0.5s forwards",
-    },
-    keyframes: {
-      "fade-slide-down": {
-        "0%": { opacity: 0, transform: "translateY(-50px)" },
-        "100%": { opacity: 1, transform: "translateY(0)" },
-      },
-      "fade-slide-right": {
-        "0%": { opacity: 0, transform: "translateX(-50px)" },
-        "100%": { opacity: 1, transform: "translateY(0)" },
-      },
-    },
+    // animation: {
+    //   "fade-slide-down": "fade-slide-down 1.5s ease 0.5s forwards",
+    //   "fade-slide-right": "fade-slide-right 1.5s ease 0.5s forwards",
+    // },
+    // keyframes: {
+    //   "fade-slide-down": {
+    //     "0%": { opacity: 0, transform: "translateY(-50px)" },
+    //     "100%": { opacity: 1, transform: "translateY(0)" },
+    //   },
+    //   "fade-slide-right": {
+    //     "0%": { opacity: 0, transform: "translateX(-50px)" },
+    //     "100%": { opacity: 1, transform: "translateY(0)" },
+    //   },
+    // },
   },
   plugins: [],
 };

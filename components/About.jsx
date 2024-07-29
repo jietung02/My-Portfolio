@@ -29,16 +29,19 @@ const About = () => {
 
   return (
     <motion.section ref={ref} id='about'
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ amount: 0.1 }}
       style={{ originX: 0.5 }}
-      className=" flex flex-col w-full bg-[#f3e5f5] shadow-xl shadow-[#e7c9d7] min-h-screen items-center">
+      className=" flex flex-col w-full bg-[#f3e5f5] shadow-xl shadow-[#e7c9d7] min-h-screen items-center"
+    >
       <h1 className='justify-center pt-32 text-4xl font-extrabold'>
         About Me
       </h1>
       <div className='flex flex-col xl:flex-row xl:items-center xl:justify-center h-full min-h-screen w-full p-20 xl:p-32 2xl:p-52'>
-        <div className='w-full xl:w-1/2 xl:p-12 2xl:p-4'>
+        <motion.div className='w-full xl:w-1/2 xl:p-12 2xl:p-4'
+          initial={{ opacity: 0, x: -100 }} // Initial scale and rotation
+          whileInView={{ opacity: 1, x: 0 }} // Final scale and rotation
+          transition={{ ease: "easeOut", duration: 1 }}
+          viewport={{ amount: 0.3 }} // Trigger when 30% in view
+        >
           <div className='text-custom-dark-gray '>
             <div className='relative w-72 h-72 mx-auto ring-cyan-300'>
               <Image
@@ -54,8 +57,13 @@ const About = () => {
               <p className='leading-loose' >I am a passionate full-stack developer dedicated to continuous learning and personal growth. Committed to long-term development, I thrive on acquiring new skills and enhancing my knowledge. My collaborative and energetic nature drives me to explore new technologies and uncover innovative solutions, finding satisfaction in each discovery. Outside of my professional life, I have a keen interest in understanding human behavior and exploring diverse perspectives. I enjoy listening to music, gaming, and reading books, all of which fuel my curiosity and enthusiasm for learning.</p>
             </div>
           </div>
-        </div>
-        <div className='w-full xl:flex-row xl:w-1/2 p-20' >
+        </motion.div>
+        <motion.div className='w-full xl:flex-row xl:w-1/2 p-20'
+          initial={{ opacity: 0, x: 100 }} // Initial scale and rotation
+          whileInView={{ opacity: 1, x: 0 }} // Final scale and rotation
+          transition={{ ease: "easeOut", duration: 1 }}
+          viewport={{ amount: 0.3 }} // Trigger when 30% in view
+        >
           <div className='flex flex-col'>
             <div className='flex flex-row justify-center gap-6 xl:gap-8'>
 
@@ -153,11 +161,8 @@ const About = () => {
               </div>
 
             </div>
-
-
           </div>
-
-        </div>
+        </motion.div>
       </div>
 
 

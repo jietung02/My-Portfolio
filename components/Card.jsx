@@ -1,8 +1,12 @@
+'use client'
 import Image from 'next/image';
 import salonxpert from '../public/assets/salonxpert.png';
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
 
 const Card = () => {
 
+  const scrollRef = useRef(null);
   const projects = [
     {
       title: 'SalonXpert',
@@ -24,7 +28,7 @@ const Card = () => {
       title: 'My Dev Journey',
       description: 'A dynamic and responsive portfolio website built with Next.js and Tailwind CSS, showcasing my software development projects and skills.',
       image: salonxpert,
-      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion','tsParticles'],
+      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'tsParticles'],
       liveUrl: '',
       repoUrl: 'https://github.com/jietung02/My-Portfolio',
     },
@@ -36,12 +40,21 @@ const Card = () => {
 
         const { title, description, image, technologies, liveUrl, repoUrl, } = project;
         return (
-          <div key={title} className="flex w-full px-20 py-20 xl:p-28 min-h-[80%] items-center justify-center">
+          <div ref={scrollRef} key={title} className="flex w-full px-20 py-20 xl:p-28 min-h-[80%] items-center justify-center">
+
             <div className='flex flex-row w-full'>
               {index % 2 === 0 ?
                 <>
                   <div className='w-full xl:w-1/2 flex justify-center items-center'>
-                    <div className='w-10/12 p-1 bg-gradient-to-tr from-[#4A4A4A] via-[#323232] to-[#161919] -rotate-2 duration-500 transition-all hover:scale-110 hover:shadow-md hover:shadow-cyan-400'>
+                    <motion.div className='w-10/12 p-1 shadow-md hover:shadow-cyan-400'
+
+                      initial={{ opacity: 0, scale: 0.7, rotate: 0 }} // Initial scale and rotation
+                      whileInView={{ opacity: 1, rotate: -2, scale: 1 }} // Final scale and rotation
+                      animate={{ rotate: 180 }}
+                      transition={{ duration: 0.8 }}
+                      whileHover={{ scale: 1.2, transition: { duration: 0.4 } }}
+                      viewport={{ amount: 0.1 }} // Trigger when 30% in view
+                    >
                       <div className='bg-[#f6e1ff] w-full px-8 py-12 lg:px-14 lg:py-18 2xl:px-16 2xl:py-20'>
                         <Image
                           src={salonxpert}
@@ -52,11 +65,16 @@ const Card = () => {
                           className='justify-center mx-auto '
                         />
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
 
                   <div className='flex flex-col w-full xl:w-1/2 justify-center'>
-                    <div className='w-full xl:w-5/6 ml-auto px-8 xl:p-0'>
+                    <motion.div className='w-full xl:w-5/6 ml-auto px-8 xl:p-0'
+                      initial={{ opacity: 0, y: 100 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ ease: 'easeOut', duration: 1 }}
+                      viewport={{ amount: 0.1 }}
+                    >
                       <h3 className='text-3xl font-bold'>{title}</h3>
                       <p className='text-lg font-medium my-3 w-full xl:w-[90%]'>{description}</p>
                       <p className='my-3 text-lg font-semibold '>
@@ -71,13 +89,18 @@ const Card = () => {
                         <a href={liveUrl} className="relative font-medium inline-block after:absolute after:block after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4A4A4A] after:via-[#323232] after:to-[#161919] after:left-0 after:scale-0 after:transition-transform after:duration-300 hover:after:scale-100">Live Demo</a>
                         <a href={repoUrl} className="relative font-medium inline-block after:absolute after:block after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4A4A4A] after:via-[#323232] after:to-[#161919] after:left-0 after:scale-0 after:transition-transform after:duration-300 hover:after:scale-100">GitHub Repo</a>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </> :
 
                 <>
                   <div className='flex flex-col w-full xl:w-1/2 justify-center'>
-                    <div className='w-full xl:w-5/6 text-right px-8 xl:p-0'>
+                    <motion.div className='w-full xl:w-5/6 text-right px-8 xl:p-0'
+                      initial={{ opacity: 0, y: 100 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ ease: 'easeOut', duration: 1 }}
+                      viewport={{ amount: 0.1 }}
+                    >
                       <h3 className='text-3xl font-bold'>{title}</h3>
                       <p className='text-lg font-medium my-3 w-full xl:w-[70%]  ml-auto'>{description}</p>
                       <p className='my-3 text-lg font-semibold '>
@@ -92,11 +115,18 @@ const Card = () => {
                         <a href={liveUrl} className="relative font-medium inline-block after:absolute after:block after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4A4A4A] after:via-[#323232] after:to-[#161919] after:left-0 after:scale-0 after:transition-transform after:duration-300 hover:after:scale-100">Live Demo</a>
                         <a href={repoUrl} className="relative font-medium inline-block after:absolute after:block after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4A4A4A] after:via-[#323232] after:to-[#161919] after:left-0 after:scale-0 after:transition-transform after:duration-300 hover:after:scale-100">GitHub Repo</a>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
 
                   <div className='w-full xl:w-1/2 flex justify-center items-center'>
-                    <div className='w-10/12 p-1 bg-gradient-to-tr from-[#4A4A4A] via-[#323232] to-[#161919] rotate-2 duration-500 transition-all hover:scale-110 hover:shadow-md hover:shadow-cyan-400'>
+                    <motion.div className='w-10/12 p-1 shadow-md hover:shadow-cyan-400'
+                      initial={{ opacity: 0, scale: 0.7, rotate: 0 }} // Initial scale and rotation
+                      whileInView={{ opacity: 1, rotate: 2, scale: 1 }} // Final scale and rotation
+                      animate={{ rotate: -180 }}
+                      transition={{ duration: 0.8 }}
+                      whileHover={{ scale: 1.2, transition: { duration: 0.4 } }}
+                      viewport={{ amount: 0.1 }} // Trigger when 30% in view
+                    >
                       <div className='bg-[#f6e1ff] w-full px-8 py-12 lg:px-14 lg:py-18 2xl:px-16 2xl:py-20'>
                         <Image
                           src={salonxpert}
@@ -107,7 +137,7 @@ const Card = () => {
                           className='justify-center mx-auto '
                         />
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </>
               }

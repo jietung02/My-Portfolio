@@ -3,11 +3,7 @@ import { Montserrat } from "next/font/google";
 import "../styles/globals.css";
 import Nav from "@/components/Nav";
 import ParticlesBackground from "./ParticlesBackground";
-import About from "@/components/About";
-import Projects from "@/components/Projects";
-import { motion, useScroll, useSpring } from "framer-motion";
-import Contact from "@/components/Contact";
-import { useRef } from "react";
+import Progress from "@/components/Progress";
 
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -19,41 +15,19 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
 
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"]
-  });
-
   return (
     <html lang="en">
       <body
-        ref={ref}
         className={montserrat.className}
       >
         <ParticlesBackground />
         <Nav />
-        <figure className="sticky w-20 h-20 top-4 m-0 p-0 z-40 bg-transparent">
-          <svg id="progress" width="90" height="90" viewBox="0 0 100 100" className="translate-x-16 -rotate-90">
-            <circle cx="50" cy="50" r="30" pathLength="1" className="opacity-20  stroke-[#55165e] stroke-[8%] fill-none" />
-            <motion.circle
-              cx="50"
-              cy="50"
-              r="30"
-              pathLength="1"
-              className="stroke-[#7230af] fill-transparent stroke-[8%]"
-              style={{ pathLength: scrollYProgress }}
-            />
-          </svg>
-        </figure>
+        <Progress />
         
-        <main className="">
-
-          {children}
-          <About />
-          <Projects />
-          <Contact />
+        <main>
+          {children}  
         </main>
+
         {/* make this like https://i9gwuc.csb.app/ whne scrolling, you can feel like it will auto go to certain percentage */}
         {/* <motion.div className="fixed left-0 right-0 bottom-40 h-1 bg-[#4463ec]" style={{ scaleX }} /> */}
       </body>
