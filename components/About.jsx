@@ -54,7 +54,7 @@ const About = () => {
             </div>
 
             <div className='text-lg font-medium text-justify mt-12'>
-              <p className='leading-loose' >I am a passionate full-stack developer dedicated to continuous learning and personal growth. Committed to long-term development, I thrive on acquiring new skills and enhancing my knowledge. My collaborative and energetic nature drives me to explore new technologies and uncover innovative solutions, finding satisfaction in each discovery. Outside of my professional life, I have a keen interest in understanding human behavior and exploring diverse perspectives. I enjoy listening to music, gaming, and reading books, all of which fuel my curiosity and enthusiasm for learning.</p>
+              <p className='leading-loose p-8' >I am a passionate full-stack developer dedicated to continuous learning and personal growth. Committed to long-term development, I thrive on acquiring new skills and enhancing my knowledge. My collaborative and energetic nature drives me to explore new technologies and uncover innovative solutions, finding satisfaction in each discovery. Outside of my professional life, I have a keen interest in understanding human behavior and exploring diverse perspectives. I enjoy listening to music, gaming, and reading books, all of which fuel my curiosity and enthusiasm for learning.</p>
             </div>
           </div>
         </motion.div>

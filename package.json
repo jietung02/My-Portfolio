@@ -11,12 +11,13 @@
   "dependencies": {
     "@coreui/icons": "^3.0.1",
     "@coreui/icons-react": "^2.3.0",
+    "@tsparticles/preset-triangles": "^3.1.0",
     "@tsparticles/react": "^3.0.0",
     "framer-motion": "^11.3.18",
+    "mongoose": "^8.5.1",
     "next": "14.2.5",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tsparticles": "^3.5.0"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "eslint": "^8",

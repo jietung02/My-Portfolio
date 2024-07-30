@@ -7,30 +7,50 @@ const useSubmit = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const [contactData, setContactData] = useState({
+    name: null,
+    email: null,
+    message: null,
+  });
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+    setContactData((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      }
+    });
+  };
+
+  const resetContactData = () => {
+    setContactData({
+      name: null,
+      email: null,
+      message: null,
+    })
+  }
+
   const handleContactSubmit = async (e) => {
     e.preventDefault();
 
     try {
       setLoading(true);
 
-      const formData = {
-        name: e.target.name.value,
-        email: e.target.email.value,
-        message: e.target.message.value,
-      };
-      console.log(formData)
       let response = await fetch('/api/submit-contact', {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: JSON.stringify(contactData),
       });
-      console.log('inn')
-      const result = await response.json();
 
-      setSuccess(result.message);
+      const result = await response.json();
 
       if (!response.ok) {
         throw new Error(result.message);
       }
+
+      setSuccess(result.message);
+      resetContactData();
+
     } catch (error) {
       setError(error.message);
     }
@@ -39,7 +59,7 @@ const useSubmit = () => {
     }
   }
 
-  return { handleContactSubmit, error, success, loading };
+  return { contactData, handleOnChange, handleContactSubmit, error, success, loading };
 };
 
 export default useSubmit;
