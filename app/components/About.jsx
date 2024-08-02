@@ -14,7 +14,7 @@ const About = () => {
       <h1 className='justify-center pt-40 text-4xl font-extrabold tracking-wide'>
         About Me
       </h1>
-      <div className='flex flex-col xl:flex-row xl:items-center xl:justify-center h-full min-h-screen w-full p-20 xl:p-20 2xl:px-52 2xl:py-20'>
+      <div className='flex flex-col xl:flex-row xl:items-center xl:justify-center h-full min-h-screen w-full p-20 xl:p-20 2xl:px-52 2xl:py-16'>
         <motion.div className='w-full xl:w-1/2 xl:p-12 2xl:p-4'
           initial={{ opacity: 0, x: -100 }} // Initial scale and rotation
           whileInView={{ opacity: 1, x: 0 }} // Final scale and rotation
@@ -49,7 +49,7 @@ const About = () => {
             </div>
           </div>
         </motion.div>
-        <motion.div className='w-full xl:flex-row xl:w-1/2 p-20'
+        <motion.div className='w-full xl:flex-row xl:w-1/2 mt-4 p-20'
           initial={{ opacity: 0, x: 100 }} // Initial scale and rotation
           whileInView={{ opacity: 1, x: 0 }} // Final scale and rotation
           transition={{ ease: "easeOut", duration: 1 }}

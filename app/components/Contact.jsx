@@ -11,14 +11,18 @@ const Contact = () => {
 
 
   useEffect(() => {
-    let timer;
-    if (success) {
-      timer = setTimeout(() => {
-        setSuccess(false);
-      }, 3000);
-    }
-    return () => clearTimeout(timer);
 
+    const clearSuccess = () => {
+      let timer;
+      if (success) {
+        timer = setTimeout(() => {
+          setSuccess(false);
+        }, 3000);
+      }
+      return () => clearTimeout(timer);
+    }
+
+    clearSuccess();
   }, [success]);
 
 
