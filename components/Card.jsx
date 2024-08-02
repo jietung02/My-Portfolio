@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image';
 import salonxpert from '../public/assets/salonxpert.png';
+import mydevjourney from '../public/assets/mydevjourney.png'
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -27,7 +28,7 @@ const Card = () => {
     {
       title: 'My Dev Journey',
       description: 'A dynamic and responsive portfolio website built with Next.js and Tailwind CSS, showcasing my software development projects and skills.',
-      image: salonxpert,
+      image: mydevjourney,
       technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'tsParticles'],
       liveUrl: '',
       repoUrl: 'https://github.com/jietung02/My-Portfolio',
@@ -46,7 +47,7 @@ const Card = () => {
               {index % 2 === 0 ?
                 <>
                   <div className='w-full xl:w-1/2 flex justify-center items-center'>
-                    <motion.div className='w-10/12 p-1 shadow-md hover:shadow-cyan-400'
+                    <motion.div className='w-10/12 p-1 shadow-md shadow-cyan-200 hover:shadow-cyan-400'
 
                       initial={{ opacity: 0, scale: 0.7, rotate: 0 }} // Initial scale and rotation
                       whileInView={{ opacity: 1, rotate: -2, scale: 1 }} // Final scale and rotation
@@ -55,9 +56,9 @@ const Card = () => {
                       whileHover={{ scale: 1.2, transition: { duration: 0.4 } }}
                       viewport={{ amount: 0.1 }} // Trigger when 30% in view
                     >
-                      <div className='bg-[#f6e1ff] w-full px-8 py-12 lg:px-14 lg:py-18 2xl:px-16 2xl:py-20'>
+                      <div className='bg-[#ffe9f7] w-full px-8 py-12 lg:px-14 lg:py-18 2xl:px-16 2xl:py-20'>
                         <Image
-                          src={salonxpert}
+                          src={image}
                           width={900}
                           height={900}
                           quality={100}
@@ -119,7 +120,7 @@ const Card = () => {
                   </div>
 
                   <div className='w-full xl:w-1/2 flex justify-center items-center'>
-                    <motion.div className='w-10/12 p-1 shadow-md hover:shadow-cyan-400'
+                    <motion.div className='w-10/12 p-1 shadow-md shadow-cyan-200 hover:shadow-cyan-400'
                       initial={{ opacity: 0, scale: 0.7, rotate: 0 }} // Initial scale and rotation
                       whileInView={{ opacity: 1, rotate: 2, scale: 1 }} // Final scale and rotation
                       animate={{ rotate: -180 }}
@@ -127,9 +128,9 @@ const Card = () => {
                       whileHover={{ scale: 1.2, transition: { duration: 0.4 } }}
                       viewport={{ amount: 0.1 }} // Trigger when 30% in view
                     >
-                      <div className='bg-[#f6e1ff] w-full px-8 py-12 lg:px-14 lg:py-18 2xl:px-16 2xl:py-20'>
+                      <div className='bg-[#ffe9f7] w-full px-8 py-12 lg:px-14 lg:py-18 2xl:px-16 2xl:py-20'>
                         <Image
-                          src={salonxpert}
+                          src={image}
                           width={900}
                           height={900}
                           quality={100}

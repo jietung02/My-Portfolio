@@ -31,11 +31,11 @@ body {
 }
 
 .nav-item {
-  @apply text-xl font-semibold text-custom-dark-gray items-center
+  @apply text-xl font-bold text-custom-dark-gray items-center tracking-wide
 }
 
 .nav-item:hover {
-  @apply text-white
+  @apply text-[#7C4DFF]
 }
 
 textarea {
@@ -44,5 +44,9 @@ textarea {
 
 circle {
   stroke-dashoffset: 0;
+}
+
+.nav-active {
+  @apply text-[#673AB7]
 }
 

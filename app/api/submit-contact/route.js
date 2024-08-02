@@ -19,11 +19,11 @@ export async function POST(request, response) {
 
     await newContact.save();
     
-    return NextResponse.json({ message: 'Form Submitted Successfully' }, { status: 200 });
+    return NextResponse.json({ message: 'Thank you for reaching out! I will get back to you soon.' }, { status: 200 });
 
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ message: 'An error occurred while submitting the form' }, { status: 500 });
+    return NextResponse.json({ message: 'There was an error sending your message. Please try again.' }, { status: 500 });
   }
 
 }

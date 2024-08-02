@@ -3,8 +3,8 @@ import { useState } from "react";
 
 const useSubmit = () => {
 
-  const [success, setSuccess] = useState(null);
-  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const [contactData, setContactData] = useState({
@@ -13,7 +13,9 @@ const useSubmit = () => {
     message: null,
   });
 
+
   const handleOnChange = (e) => {
+    setError(false);
     const { name, value } = e.target;
     setContactData((prev) => {
       return {
@@ -36,6 +38,7 @@ const useSubmit = () => {
 
     try {
       setLoading(true);
+      setError(false);
 
       let response = await fetch('/api/submit-contact', {
         method: 'POST',
@@ -59,7 +62,7 @@ const useSubmit = () => {
     }
   }
 
-  return { contactData, handleOnChange, handleContactSubmit, error, success, loading };
+  return { contactData, handleOnChange, handleContactSubmit, error, success, setSuccess, loading };
 };
 
 export default useSubmit;

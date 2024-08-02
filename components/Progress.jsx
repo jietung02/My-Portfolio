@@ -19,7 +19,7 @@ const Progress = () => {
           cy="50"
           r="30"
           pathLength="1"
-          className="stroke-[#7230af] fill-transparent stroke-[8%]"
+          className="stroke-[#673AB7] fill-transparent stroke-[8%]"
           style={{ pathLength: scrollYProgress }}
         />
       </svg>

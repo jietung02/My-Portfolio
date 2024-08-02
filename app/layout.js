@@ -1,12 +1,11 @@
 'use client';
-import { Montserrat } from "next/font/google";
+import { Montserrat, Roboto, Open_Sans, } from "next/font/google";
 import "../styles/globals.css";
-import Nav from "@/components/Nav";
 import ParticlesBackground from "./ParticlesBackground";
 import Progress from "@/components/Progress";
 
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const font = Open_Sans({ subsets: ["latin"], });
 
 // export const metadata = {
 //   title: "Jie Min Portfolio",
@@ -18,14 +17,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={montserrat.className}
+        className={`${font.className} antialiased`}
       >
         <ParticlesBackground />
-        <Nav />
         <Progress />
-        
+
         <main>
-          {children}  
+            {children}
         </main>
 
         {/* make this like https://i9gwuc.csb.app/ whne scrolling, you can feel like it will auto go to certain percentage */}
