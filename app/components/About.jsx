@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image';
-import profileicon from "../public/assets/imageicon.png";
+import profileicon from "../../public/assets/imageicon.png";
 import { CIcon, CIconSvg } from '@coreui/icons-react';
 import { cibAmazonAws, cibCss3Shiled, cibDocker, cibGit, cibHtml5Shield, cibJavascript, cibMongodb, cibMysql, cibNextJs, cibNodeJs, cibReact, } from '@coreui/icons';
 import { motion, } from "framer-motion";
@@ -25,6 +25,7 @@ const About = () => {
             <div className='relative w-72 h-72 mx-auto ring-cyan-300'>
               <Image
                 src={profileicon}
+                alt='myPic'
                 style={{ objectFit: 'cover' }}
                 fill
                 unoptimized

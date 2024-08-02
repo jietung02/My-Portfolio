@@ -1,7 +1,7 @@
 import { Montserrat, Open_Sans, } from "next/font/google";
 import "../styles/globals.css";
 import ParticlesBackground from "./ParticlesBackground";
-import Progress from "@/components/Progress";
+import Progress from "@/app/components/Progress";
 
 
 const font = Open_Sans({ subsets: ["latin"], });
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <main>
             {children}
         </main>
-        
+
       </body>
     </html>
   );

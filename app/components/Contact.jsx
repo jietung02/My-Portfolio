@@ -1,7 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion';
-import useSubmit from '@/hooks/useSubmit';
+import useSubmit from '@/app/hooks/useSubmit';
 import CIcon from '@coreui/icons-react';
 import { cibLinkedin, cibGithub, } from '@coreui/icons';
 

@@ -1,8 +1,8 @@
 'use client'
 import Image from 'next/image';
-import salonxpert from '../public/assets/salonxpert.png';
-import discordbotRomaji from '../public/assets/comingsoon.jpg';
-import mydevjourney from '../public/assets/mydevjourney.png'
+import salonxpert from '../../public/assets/salonxpert.png';
+import discordbotRomaji from '../../public/assets/comingsoon.jpg';
+import mydevjourney from '../../public/assets/mydevjourney.png'
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -60,6 +60,7 @@ const Card = () => {
                       <div className='bg-[#ffe9f7] w-full px-8 py-12 lg:px-14 lg:py-18 2xl:px-16 2xl:py-20 '>
                         <Image
                           src={image}
+                          alt={title}
                           width={900}
                           height={900}
                           quality={100}
@@ -132,6 +133,7 @@ const Card = () => {
                       <div className='bg-[#ffe9f7] w-full px-8 py-12 lg:px-14 lg:py-18 2xl:px-16 2xl:py-20 '>
                         <Image
                           src={image}
+                          alt={title}
                           width={900}
                           height={900}
                           quality={100}
