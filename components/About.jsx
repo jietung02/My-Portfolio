@@ -15,27 +15,34 @@ import profileicon from "../public/assets/imageicon.png";
 // import react from "../public/assets/react.png";
 import { CIcon, CIconSvg } from '@coreui/icons-react';
 import { cibAmazonAws, cibCss3Shiled, cibDocker, cibGit, cibHtml5Shield, cibJavascript, cibMongodb, cibMysql, cibNextJs, cibNodeJs, cibReact, } from '@coreui/icons';
-import { animate, easeOut, motion, inView, useInView, useScroll } from "framer-motion";
-import { useRef } from 'react';
-
+import { motion, } from "framer-motion";
+import { useContext, useEffect, } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { SectionContext } from '@/app/SectionContext';
 
 const About = () => {
 
-  // const about = document.querySelector(".about");
-  const ref = useRef(null);
-  const { scrollY } = useScroll();
-  // const isView = useInView(ref);
+  const { handleSectionChange } = useContext(SectionContext);
+
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      handleSectionChange('about');
+    }
+  }, [inView]);
 
 
   return (
-    <motion.section ref={ref} id='about'
-      style={{ originX: 0.5 }}
+    <section ref={ref} id='about'
       className=" flex flex-col w-full bg-[#f3e5f5] shadow-xl shadow-[#e7c9d7] min-h-screen items-center"
     >
-      <h1 className='justify-center pt-32 text-4xl font-extrabold'>
+      <h1 className='justify-center pt-40 text-4xl font-extrabold tracking-wide'>
         About Me
       </h1>
-      <div className='flex flex-col xl:flex-row xl:items-center xl:justify-center h-full min-h-screen w-full p-20 xl:p-32 2xl:p-52'>
+      <div className='flex flex-col xl:flex-row xl:items-center xl:justify-center h-full min-h-screen w-full p-20 xl:p-32 2xl:px-52 2xl:py-20'>
         <motion.div className='w-full xl:w-1/2 xl:p-12 2xl:p-4'
           initial={{ opacity: 0, x: -100 }} // Initial scale and rotation
           whileInView={{ opacity: 1, x: 0 }} // Final scale and rotation
@@ -168,7 +175,7 @@ const About = () => {
 
 
 
-    </motion.section>
+    </section>
   )
 }
 

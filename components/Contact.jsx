@@ -1,19 +1,45 @@
 'use client'
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import useSubmit from '@/hooks/useSubmit';
 import CIcon from '@coreui/icons-react';
 import { cibLinkedin, cibGithub, } from '@coreui/icons';
-
+import { useInView } from 'react-intersection-observer';
+import { SectionContext } from '@/app/SectionContext';
 
 const Contact = () => {
 
-  const { contactData, handleOnChange, handleContactSubmit, error, success, loading } = useSubmit();
+  const { handleSectionChange } = useContext(SectionContext);
+
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
+  const { contactData, handleOnChange, handleContactSubmit, error, success, setSuccess, loading } = useSubmit();
+
+  useEffect(() => {
+    if (inView) {
+      handleSectionChange('contact');
+    }
+  }, [inView]);
+
+
+  useEffect(() => {
+    let timer;
+    if (success) {
+      timer = setTimeout(() => {
+        setSuccess(false);
+      }, 3000);
+    }
+    return () => clearTimeout(timer);
+
+  }, [success]);
+
 
   return (
-    <section id='contact' className='flex flex-col w-full bg-[#fad3f4] min-h-screen items-center justify-center'>
+    <section ref={ref} id='contact' className='flex flex-col w-full bg-[#fad3f4] min-h-screen items-center justify-center'>
 
-      <h1 className='mx-auto pt-32 text-4xl font-extrabold'>Contact Me</h1>
+      <h1 className='mx-auto pt-32 text-4xl font-extrabold tracking-wide'>Contact Me</h1>
       <div className='flex flex-row w-full mt-10 mx-auto justify-center gap-8'>
         <a href='https://www.linkedin.com/in/jie-min-tung-675533262/'>
           <CIcon icon={cibLinkedin} width={50} height={50} style={{ fill: '#55165e' }} />
@@ -23,6 +49,23 @@ const Contact = () => {
         </a>
 
       </div>
+
+      {success &&
+        <div className='flex flex-col w-full mt-10 mb-0 '>
+          <div className='flex w-96 min-h-12 text-green-700 bg-green-100 mx-auto justify-center items-center rounded-xl p-3'>
+            <p className='text-center text-lg font-medium'>{success}</p>
+          </div>
+        </div>
+      }
+
+      {error &&
+        <div className='flex flex-col w-full mt-10 mb-0 '>
+          <div className='flex w-96 min-h-12 text-red-700 bg-red-100 mx-auto justify-center items-center rounded-xl p-3'>
+            <p className='text-center text-lg font-medium'>{error}</p>
+          </div>
+        </div>
+      }
+
       <motion.form method='POST' className='flex flex-col mx-auto m-6 items-center w-3/4 p-6' onSubmit={handleContactSubmit}
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -46,6 +89,7 @@ const Contact = () => {
 
         <div className='w-96 relative text-lg font-medium m-3 '>
           <button
+            disabled={loading}
             type='submit'
             className="rounded-lg h-12 text-lg w-full text-white bg-[#22095e] border border-[#22095e] focus:ring-2 focus:ring-white focus:outline-none hover:bg-[#161919] hover:ring-2 hover:ring-white transition-colors duration-300"
           >
