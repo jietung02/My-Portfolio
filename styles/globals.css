@@ -31,7 +31,7 @@ body {
 }
 
 .nav-item {
-  @apply text-xl font-bold text-custom-dark-gray items-center tracking-wide
+  @apply text-xl font-bold text-custom-dark-gray items-center tracking-wide cursor-pointer
 }
 
 .nav-item:hover {

@@ -1,27 +1,13 @@
 'use client'
-import React, { useContext, useEffect } from 'react'
+import { useEffect } from 'react'
 import { motion } from 'framer-motion';
 import useSubmit from '@/hooks/useSubmit';
 import CIcon from '@coreui/icons-react';
 import { cibLinkedin, cibGithub, } from '@coreui/icons';
-import { useInView } from 'react-intersection-observer';
-import { SectionContext } from '@/app/SectionContext';
 
 const Contact = () => {
 
-  const { handleSectionChange } = useContext(SectionContext);
-
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-  });
-
   const { contactData, handleOnChange, handleContactSubmit, error, success, setSuccess, loading } = useSubmit();
-
-  useEffect(() => {
-    if (inView) {
-      handleSectionChange('contact');
-    }
-  }, [inView]);
 
 
   useEffect(() => {
@@ -37,7 +23,7 @@ const Contact = () => {
 
 
   return (
-    <section ref={ref} id='contact' className='flex flex-col w-full bg-[#fad3f4] min-h-screen items-center justify-center'>
+    <section id='contact' className='flex flex-col w-full bg-[#fad3f4] min-h-screen items-center justify-center'>
 
       <h1 className='mx-auto pt-32 text-4xl font-extrabold tracking-wide'>Contact Me</h1>
       <div className='flex flex-row w-full mt-10 mx-auto justify-center gap-8'>

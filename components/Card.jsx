@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image';
 import salonxpert from '../public/assets/salonxpert.png';
+import discordbotRomaji from '../public/assets/comingsoon.jpg';
 import mydevjourney from '../public/assets/mydevjourney.png'
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
@@ -20,7 +21,7 @@ const Card = () => {
     {
       title: 'Discord Bot - Romaji Lyrics Finder',
       description: 'A bot that fetches romaji lyrics of the currently playing Japanese song on Spotify when you type `!lyr` in a Discord channel.',
-      image: salonxpert,
+      image: discordbotRomaji,
       technologies: ['NodeJS', 'Puppeteer', 'Spotify API', 'Discord.js'],
       liveUrl: '',
       repoUrl: 'https://github.com/jietung02/Romaji-Lyrics-Finder',
@@ -56,7 +57,7 @@ const Card = () => {
                       whileHover={{ scale: 1.2, transition: { duration: 0.4 } }}
                       viewport={{ amount: 0.1 }} // Trigger when 30% in view
                     >
-                      <div className='bg-[#ffe9f7] w-full px-8 py-12 lg:px-14 lg:py-18 2xl:px-16 2xl:py-20'>
+                      <div className='bg-[#ffe9f7] w-full px-8 py-12 lg:px-14 lg:py-18 2xl:px-16 2xl:py-20 '>
                         <Image
                           src={image}
                           width={900}
@@ -128,7 +129,7 @@ const Card = () => {
                       whileHover={{ scale: 1.2, transition: { duration: 0.4 } }}
                       viewport={{ amount: 0.1 }} // Trigger when 30% in view
                     >
-                      <div className='bg-[#ffe9f7] w-full px-8 py-12 lg:px-14 lg:py-18 2xl:px-16 2xl:py-20'>
+                      <div className='bg-[#ffe9f7] w-full px-8 py-12 lg:px-14 lg:py-18 2xl:px-16 2xl:py-20 '>
                         <Image
                           src={image}
                           width={900}

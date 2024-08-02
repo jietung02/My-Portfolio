@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useCallback, useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 
 import { loadTrianglesPreset } from "@tsparticles/preset-triangles";

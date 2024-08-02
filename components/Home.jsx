@@ -1,17 +1,11 @@
 'use client'
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useContext, useEffect, } from 'react';
 
 const Home = () => {
 
-
-
-
-
-
   return (
-    <section id="home" className="flex flex-col w-full bg-violet-100 h-screen ">
+    <section  id="home" className="flex flex-col w-full bg-violet-100 h-screen ">
       <div className="flex flex-col m-auto text-custom-dark-gray">
         <motion.div className="flex flex-col w-full justify-center mx-auto items-center"
           initial={{ opacity: 0, x: -70 }}

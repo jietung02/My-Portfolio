@@ -11,6 +11,8 @@ export async function POST(request, response) {
     }
     await connectDB();
 
+    // await notifyMe({ name, email, message });
+
     const newContact = new Contact({
       name: name,
       email: email,
@@ -18,7 +20,7 @@ export async function POST(request, response) {
     });
 
     await newContact.save();
-    
+
     return NextResponse.json({ message: 'Thank you for reaching out! I will get back to you soon.' }, { status: 200 });
 
   } catch (error) {
