@@ -13,7 +13,7 @@ const Home = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-4xl font-semibold ">Hello, I'm <span className="font-extrabold">Tung Jie Min</span>.</h1>
+          <h1 className="text-4xl font-semibold ">Hello, I&apos;m <span className="font-extrabold">Tung Jie Min</span>.</h1>
           <h2 className="text-xl font-medium mx-auto py-2 ">A Full Stack Developer</h2>
 
         </motion.div>

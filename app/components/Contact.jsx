@@ -1,5 +1,5 @@
 'use client'
-import { useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import useSubmit from '@/app/hooks/useSubmit';
 import CIcon from '@coreui/icons-react';
@@ -9,21 +9,20 @@ const Contact = () => {
 
   const { contactData, handleOnChange, handleContactSubmit, error, success, setSuccess, loading } = useSubmit();
 
+  const clearSuccess = useCallback(() => {
+    let timer;
+    if (success) {
+      timer = setTimeout(() => {
+        setSuccess(false);
+      }, 3000);
+    }
+    return () => clearTimeout(timer);
+  }, [success, setSuccess]);
+
 
   useEffect(() => {
-
-    const clearSuccess = () => {
-      let timer;
-      if (success) {
-        timer = setTimeout(() => {
-          setSuccess(false);
-        }, 3000);
-      }
-      return () => clearTimeout(timer);
-    }
-
     clearSuccess();
-  }, [success]);
+  }, [success, setSuccess]);
 
 
   return (
