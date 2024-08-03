@@ -22,7 +22,7 @@ const Contact = () => {
 
   useEffect(() => {
     clearSuccess();
-  }, [success, setSuccess]);
+  }, [success, clearSuccess]);
 
 
   return (

@@ -31,7 +31,7 @@ const Card = () => {
       description: 'A dynamic and responsive portfolio website built with Next.js and Tailwind CSS, showcasing my software development projects and skills.',
       image: mydevjourney,
       technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'tsParticles'],
-      liveUrl: '',
+      liveUrl: 'https://www.jiemin.space',
       repoUrl: 'https://github.com/jietung02/My-Portfolio',
     },
 
@@ -89,8 +89,16 @@ const Card = () => {
                         })}
                       </p>
                       <div className='flex flex-row space-x-4'>
-                        <a href={liveUrl} className="relative font-medium inline-block after:absolute after:block after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4A4A4A] after:via-[#323232] after:to-[#161919] after:left-0 after:scale-0 after:transition-transform after:duration-300 hover:after:scale-100">Live Demo</a>
-                        <a href={repoUrl} className="relative font-medium inline-block after:absolute after:block after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4A4A4A] after:via-[#323232] after:to-[#161919] after:left-0 after:scale-0 after:transition-transform after:duration-300 hover:after:scale-100">GitHub Repo</a>
+                        <a
+                          href={liveUrl}
+                          target='_blank'
+                          rel='noreferrer'
+                          className="relative font-medium inline-block after:absolute after:block after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4A4A4A] after:via-[#323232] after:to-[#161919] after:left-0 after:scale-0 after:transition-transform after:duration-300 hover:after:scale-100">Live Demo</a>
+                        <a
+                          href={repoUrl}
+                          target='_blank'
+                          rel='noreferrer'
+                          className="relative font-medium inline-block after:absolute after:block after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4A4A4A] after:via-[#323232] after:to-[#161919] after:left-0 after:scale-0 after:transition-transform after:duration-300 hover:after:scale-100">GitHub Repo</a>
                       </div>
                     </motion.div>
                   </div>
@@ -115,8 +123,16 @@ const Card = () => {
                         })}
                       </p>
                       <div className='flex flex-row justify-end space-x-4'>
-                        <a href={liveUrl} className="relative font-medium inline-block after:absolute after:block after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4A4A4A] after:via-[#323232] after:to-[#161919] after:left-0 after:scale-0 after:transition-transform after:duration-300 hover:after:scale-100">Live Demo</a>
-                        <a href={repoUrl} className="relative font-medium inline-block after:absolute after:block after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4A4A4A] after:via-[#323232] after:to-[#161919] after:left-0 after:scale-0 after:transition-transform after:duration-300 hover:after:scale-100">GitHub Repo</a>
+                        <a
+                          href={liveUrl}
+                          target='_blank'
+                          rel='noreferrer'
+                          className="relative font-medium inline-block after:absolute after:block after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4A4A4A] after:via-[#323232] after:to-[#161919] after:left-0 after:scale-0 after:transition-transform after:duration-300 hover:after:scale-100">Live Demo</a>
+                        <a
+                          href={repoUrl}
+                          target='_blank'
+                          rel='noreferrer'
+                          className="relative font-medium inline-block after:absolute after:block after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4A4A4A] after:via-[#323232] after:to-[#161919] after:left-0 after:scale-0 after:transition-transform after:duration-300 hover:after:scale-100">GitHub Repo</a>
                       </div>
                     </motion.div>
                   </div>
