@@ -30,7 +30,7 @@ const Card = () => {
       title: 'My Dev Journey',
       description: 'A dynamic and responsive portfolio website built with Next.js and Tailwind CSS, showcasing my software development projects and skills.',
       image: mydevjourney,
-      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'tsParticles'],
+      technologies: ['Next.js', 'MongoDB', 'Tailwind CSS', 'Framer Motion', 'tsParticles'],
       liveUrl: 'https://www.jiemin.space',
       repoUrl: 'https://github.com/jietung02/My-Portfolio',
     },
