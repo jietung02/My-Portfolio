@@ -14,6 +14,10 @@ const Nav = () => {
     });
   };
 
+  const handleOnClick = () => {
+    toggleDropdown();
+  };
+
   // useEffect(()=> {
   //   Events.scrollEvent.register('begin', (to, element) => {
   //     console.log('begin', to, element);
@@ -32,8 +36,7 @@ const Nav = () => {
   // },[])
 
   return (
-    <nav className={`w-full z-50 fixed ${isOpen ? 'bg-[#FFF1FA] opacity-90' : ''} lg:bg-transparent px-4 py-6 items-center`}>
-      {/* px-10 py-6 gap-8 fixed items-center md:justify-end */}
+    <nav className={`w-full z-50 fixed ${isOpen ? 'bg-[#FFF1FA] opacity-90' : ''} lg:bg-transparent p-6 items-center`}>
       <div className='block lg:hidden'>
         <button
           className='flex items-center ml-auto'
@@ -57,7 +60,7 @@ const Nav = () => {
       </div>
 
       <div
-        className={`w-full flex flex-col gap-8 lg:flex lg:flex-row lg:items-center lg:justify-end lg:w-auto lg:px-8 lg:py-4 lg:gap-8 ${isOpen ? 'block' : 'hidden'} `}>
+        className={`w-full flex flex-col gap-8 lg:flex lg:flex-row lg:items-center lg:justify-end lg:w-auto lg:px-6 lg:py-4 lg:gap-8 ${isOpen ? 'block' : 'hidden'} `}>
         <Link
           activeClass='nav-active'
           to='home'
@@ -67,6 +70,7 @@ const Nav = () => {
           duration={200}
           delay={0}
           className='nav-item'
+          onClick={handleOnClick}
         >
           Home
         </Link>
@@ -80,6 +84,7 @@ const Nav = () => {
           duration={200}
           delay={0}
           className='nav-item'
+          onClick={handleOnClick}
         >
           About
         </Link>
@@ -93,6 +98,7 @@ const Nav = () => {
           duration={200}
           delay={0}
           className='nav-item'
+          onClick={handleOnClick}
         >
           Projects
         </Link>
@@ -106,6 +112,7 @@ const Nav = () => {
           duration={200}
           delay={0}
           className='nav-item'
+          onClick={handleOnClick}
         >
           Contact
         </Link>
