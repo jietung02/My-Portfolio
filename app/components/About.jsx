@@ -16,7 +16,7 @@ const About = () => {
       </h1>
       <div className='flex flex-col xl:flex-row xl:items-center xl:justify-center h-full min-h-screen w-full px-10 py-14 md:p-20 2xl:px-44 2xl:py-16'>
         <motion.div className='w-full xl:w-1/2 xl:p-12 2xl:p-4'
-          initial={{ opacity: 0, x: '-10%' }} // Initial scale and rotation
+          initial={{ opacity: 0, x: 0 }} // Initial scale and rotation
           whileInView={{ opacity: 1, x: 0 }} // Final scale and rotation
           transition={{ ease: "easeOut", duration: 1 }}
           viewport={{ amount: 0.3 }} // Trigger when 30% in view
@@ -50,7 +50,7 @@ const About = () => {
           </div>
         </motion.div>
         <motion.div className='w-full xl:flex-row xl:w-1/2 mt-2 py-20 '
-          initial={{ opacity: 0, x: '10%' }} // Initial scale and rotation
+          initial={{ opacity: 0, x: 0 }} // Initial scale and rotation
           whileInView={{ opacity: 1, x: 0 }} // Final scale and rotation
           transition={{ ease: "easeOut", duration: 1 }}
           viewport={{ amount: 0.3 }} // Trigger when 30% in view
