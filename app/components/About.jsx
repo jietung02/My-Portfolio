@@ -4,8 +4,12 @@ import profileicon from "../../public/assets/imageicon.png";
 import { CIcon, CIconSvg } from '@coreui/icons-react';
 import { cibAmazonAws, cibCss3Shiled, cibDocker, cibGit, cibHtml5Shield, cibJavascript, cibMongodb, cibMysql, cibNextJs, cibNodeJs, cibReact, } from '@coreui/icons';
 import { motion, } from "framer-motion";
+import useScreenSize from '../hooks/useScreenSize';
+
 
 const About = () => {
+
+  const { width } = useScreenSize();
 
   return (
     <section id='about'
@@ -16,9 +20,9 @@ const About = () => {
       </h1>
       <div className='flex flex-col xl:flex-row xl:items-center xl:justify-center h-full min-h-screen w-full px-10 py-14 md:p-20 2xl:px-44 2xl:py-16'>
         <motion.div className='w-full xl:w-1/2 xl:p-12 2xl:p-4'
-          initial={{ opacity: 0, x: 0 }} // Initial scale and rotation
+          initial={{ opacity: 0, x: width < 1280 ? 0 : '-50px' }} // Initial scale and rotation
           whileInView={{ opacity: 1, x: 0 }} // Final scale and rotation
-          transition={{ ease: "easeOut", duration: 1 }}
+          transition={{ ease: "easeOut", duration: 1.2 }}
           viewport={{ amount: 0.3 }} // Trigger when 30% in view
         >
           <div className='text-custom-dark-gray '>
@@ -50,9 +54,9 @@ const About = () => {
           </div>
         </motion.div>
         <motion.div className='w-full xl:flex-row xl:w-1/2 mt-2 py-20 '
-          initial={{ opacity: 0, x: 0 }} // Initial scale and rotation
+          initial={{ opacity: 0, x: width < 1280 ? 0 : '50px' }} // Initial scale and rotation
           whileInView={{ opacity: 1, x: 0 }} // Final scale and rotation
-          transition={{ ease: "easeOut", duration: 1 }}
+          transition={{ ease: "easeOut", duration: 1.2 }}
           viewport={{ amount: 0.3 }} // Trigger when 30% in view
         >
           <div className='flex flex-wrap gap-2 justify-center '>
