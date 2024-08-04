@@ -62,17 +62,17 @@ const Contact = () => {
         viewport={{ amount: 0.3 }}
       >
         <div className='w-72 sm:w-96 relative text-lg font-medium m-3'>
-          <input type='text' id='name' name='name' onChange={handleOnChange} value={contactData.name === null ? '' : contactData.name} required pattern="[A-Za-z ]{1,50}" title="Please enter a valid name (letters and spaces only, 1-50 characters)" className="block rounded-lg px-2.5 pt-5 pb-1 text-lg w-full text-custom-dark-gray bg-[#F8F8FF] focus:ring-2 focus:ring-[#22095e] focus:outline-none peer" placeholder="" />
+          <input type='text' id='name' name='name' onChange={handleOnChange} value={contactData.name === null ? "" : contactData.name} required pattern="[A-Za-z ]{1,50}" title="Please enter a valid name (letters and spaces only, 1-50 characters)" className="block rounded-lg px-2.5 pt-5 pb-1 text-lg w-full text-custom-dark-gray bg-[#F8F8FF] focus:ring-2 focus:ring-[#22095e] focus:outline-none peer" placeholder="" />
           <label htmlFor='name' className="absolute top-4 text-sm text-custom-dark-gray duration-300 transform -translate-y-4 scale-75 z-10 origin-[0] left-2.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Name</label>
         </div>
 
         <div className='w-72 sm:w-96 relative text-lg font-medium'>
-          <input type='email' id='email' name='email' onChange={handleOnChange} value={contactData.email === null ? '' : contactData.email} required className="block rounded-lg px-2.5 pt-5 pb-1 text-lg w-full text-custom-dark-gray bg-[#F8F8FF] focus:ring-2 focus:ring-[#22095e] focus:outline-none peer" placeholder="" />
+          <input type='email' id='email' name='email' onChange={handleOnChange} value={contactData.email === null ? "" : contactData.email} required className="block rounded-lg px-2.5 pt-5 pb-1 text-lg w-full text-custom-dark-gray bg-[#F8F8FF] focus:ring-2 focus:ring-[#22095e] focus:outline-none peer" placeholder="" />
           <label htmlFor='email' className="absolute top-4 text-sm text-custom-dark-gray duration-300 transform -translate-y-4 scale-75 z-10 origin-[0] left-2.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
         </div>
 
         <div className='w-72 sm:w-96 relative text-base md:text-lg font-medium m-3'>
-          <textarea id='message' name='message' onChange={handleOnChange} value={contactData.message === null ? '' : contactData.message} required className="block rounded-lg px-2.5 pt-5 pb-1 text-lg w-full text-custom-dark-gray bg-[#F8F8FF] focus:ring-2 focus:ring-[#22095e] focus:outline-none peer" placeholder="" maxLength={1200} rows={4}></textarea>
+          <textarea id='message' name='message' onChange={handleOnChange} value={contactData.message === null ? "" : contactData.message} required className="block rounded-lg px-2.5 pt-5 pb-1 text-lg w-full text-custom-dark-gray bg-[#F8F8FF] focus:ring-2 focus:ring-[#22095e] focus:outline-none peer" placeholder="" maxLength={1200} rows={4}></textarea>
           <label htmlFor='message' className="absolute top-4 text-sm text-custom-dark-gray duration-300 transform -translate-y-4 scale-75 z-10 origin-[0] left-2.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Message</label>
         </div>
 

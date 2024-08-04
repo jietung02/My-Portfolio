@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect } from 'react';
 
 const useScreenSize = () => {
@@ -15,6 +16,7 @@ const useScreenSize = () => {
     };
 
     window.addEventListener('resize', handleResize);
+    handleResize();
 
     return () => {
       window.removeEventListener('resize', handleResize);
