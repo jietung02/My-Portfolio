@@ -11,7 +11,7 @@ const Progress = () => {
   });
 
   return (
-    <figure className="fixed w-20 h-20 bottom-4 right-4 m-0 p-0 z-40 bg-transparent -rotate-90">
+    <figure className="fixed w-20 h-20 bottom-4 right-4 m-0 p-0 z-40 bg-transparent -rotate-90 opacity-50 sm:opacity-100">
       <svg id="progress" width="90" height="90" viewBox="0 0 100 100" className="translate-x-[-16]">
         <circle cx="50" cy="50" r="30" pathLength="1" className="opacity-20  stroke-[#55165e] stroke-[8%] fill-none" />
         <motion.circle
