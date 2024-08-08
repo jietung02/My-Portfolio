@@ -15,7 +15,7 @@ const Card = () => {
       description: 'A Cloud-Integrated and Customisable Salon Management Solution',
       image: salonxpert,
       technologies: ['React', 'NodeJS', 'MySQL', 'AWS', 'Docker'],
-      liveUrl: 'http://salon-xpert.ap-southeast-1.elasticbeanstalk.com/',
+      liveUrl: 'https://www.frontend.salon-xpert.pro',
       repoUrl: 'https://github.com/jietung02/Salon-Xpert-Frontend',
     },
     {
