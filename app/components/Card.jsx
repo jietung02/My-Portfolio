@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image';
 import salonxpert from '../../public/assets/salonxpert.png';
-import discordbotRomaji from '../../public/assets/comingsoon.jpg';
+import discordbotRomaji from '../../public/assets/romajilyricsfinder.png';
 import mydevjourney from '../../public/assets/mydevjourney.png'
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
@@ -65,8 +65,7 @@ const Card = () => {
                           <Image
                             src={image}
                             alt={title}
-                            width={900}
-                            height={900}
+                            height={600}
                             quality={100}
                             unoptimized
                             className='justify-center mx-auto '
@@ -157,8 +156,7 @@ const Card = () => {
                           <Image
                             src={image}
                             alt={title}
-                            width={900}
-                            height={900}
+                            height={600}
                             quality={100}
                             unoptimized
                             className='justify-center mx-auto '
